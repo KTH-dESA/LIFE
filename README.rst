@@ -1,15 +1,10 @@
-MJ2383
-------
+LIFE Academy Workshop
+---------------------
 
-Lab 1:
-
-.. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/main?filepath=MJ2383_Lab_1.ipynb
-
-Lab 3:
+OSeMOSYS Exercise
 
 .. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/main?filepath=MJ2383_Lab_3.ipynb
+ :target: https://mybinder.org/v2/gh/KTH-dESA/LIFE/main?filepath=OSeMOSYS.ipynb
 
 Developing with Jupyter Notebooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,7 +58,7 @@ License
              href="http://purl.org/dc/dcmitype/InteractiveResource"
              property="dct:title"
              rel="dct:type">
-             MJ2383 Computer Labs</span>
+             LIFE Academy Workshop</span>
         by
         <a xmlns:cc="http://creativecommons.org/ns#"
         href="https://www.energy.kth.se/energy-systems"
@@ -74,5 +69,5 @@ License
            href="http://creativecommons.org/licenses/by/4.0/">
            Creative Commons Attribution 4.0 International License</a>.
            <br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/"
-           href="https://github.com/KTH-dESA/MJ2383"
-           rel="dct:source">https://github.com/KTH-dESA/MJ2383</a>
+           href="https://github.com/KTH-dESA/LIFE"
+           rel="dct:source">https://github.com/KTH-dESA/LIFE</a>
