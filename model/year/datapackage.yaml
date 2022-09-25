@@ -1,0 +1,1662 @@
+resources:
+  - name: accumulatedannualdemand
+    title: AccumulatedAnnualDemand
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: FUEL
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: FUEL
+          reference:
+            resource: fuel
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - FUEL
+        - YEAR
+      missingValues:
+        - ''
+  - name: annualemissionlimit
+    title: AnnualEmissionLimit
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: EMISSION
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: EMISSION
+          reference:
+            resource: emission
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - EMISSION
+        - YEAR
+      missingValues:
+        - ''
+  - name: annualexogenousemission
+    title: AnnualExogenousEmission
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: EMISSION
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: EMISSION
+          reference:
+            resource: emission
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - EMISSION
+        - YEAR
+      missingValues:
+        - ''
+  - name: availabilityfactor
+    title: AvailabilityFactor
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: capacityfactor
+    title: CapacityFactor
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: TIMESLICE
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: TIMESLICE
+          reference:
+            resource: timeslice
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - TIMESLICE
+        - YEAR
+      missingValues:
+        - ''
+  - name: capacityofonetechnologyunit
+    title: CapacityOfOneTechnologyUnit
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: capacitytoactivityunit
+    title: CapacityToActivityUnit
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+      missingValues:
+        - ''
+  - name: capitalcost
+    title: CapitalCost
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: capitalcoststorage
+    title: CapitalCostStorage
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: STORAGE
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - STORAGE
+        - YEAR
+      missingValues:
+        - ''
+  - name: conversionld
+    title: Conversionld
+    schema:
+      fields:
+        - name: TIMESLICE
+          type: str
+        - name: DAYTYPE
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: TIMESLICE
+          reference:
+            resource: timeslice
+            fields: VALUE
+        - fields: DAYTYPE
+          reference:
+            resource: daytype
+            fields: VALUE
+      primaryKey:
+        - TIMESLICE
+        - DAYTYPE
+      missingValues:
+        - ''
+  - name: conversionlh
+    title: Conversionlh
+    schema:
+      fields:
+        - name: TIMESLICE
+          type: str
+        - name: DAILYTIMEBRACKET
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: TIMESLICE
+          reference:
+            resource: timeslice
+            fields: VALUE
+        - fields: DAILYTIMEBRACKET
+          reference:
+            resource: dailytimebracket
+            fields: VALUE
+      primaryKey:
+        - TIMESLICE
+        - DAILYTIMEBRACKET
+      missingValues:
+        - ''
+  - name: conversionls
+    title: Conversionls
+    schema:
+      fields:
+        - name: TIMESLICE
+          type: str
+        - name: SEASON
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: TIMESLICE
+          reference:
+            resource: timeslice
+            fields: VALUE
+        - fields: SEASON
+          reference:
+            resource: season
+            fields: VALUE
+      primaryKey:
+        - TIMESLICE
+        - SEASON
+      missingValues:
+        - ''
+  - name: dailytimebracket
+    title: DAILYTIMEBRACKET
+    schema:
+      fields:
+        - name: VALUE
+          type: int
+      missingValues:
+        - ''
+  - name: daytype
+    title: DAYTYPE
+    schema:
+      fields:
+        - name: VALUE
+          type: int
+      missingValues:
+        - ''
+  - name: daysplit
+    title: DaySplit
+    schema:
+      fields:
+        - name: DAILYTIMEBRACKET
+          type: int
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: DAILYTIMEBRACKET
+          reference:
+            resource: dailytimebracket
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - DAILYTIMEBRACKET
+        - YEAR
+      missingValues:
+        - ''
+  - name: daysindaytype
+    title: DaysInDayType
+    schema:
+      fields:
+        - name: SEASON
+          type: int
+        - name: DAYTYPE
+          type: int
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: SEASON
+          reference:
+            resource: season
+            fields: VALUE
+        - fields: DAYTYPE
+          reference:
+            resource: daytype
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - SEASON
+        - DAYTYPE
+        - YEAR
+      missingValues:
+        - ''
+  - name: depreciationmethod
+    title: DepreciationMethod
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+      primaryKey:
+        - REGION
+      missingValues:
+        - ''
+  - name: discountrate
+    title: DiscountRate
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+      missingValues:
+        - ''
+  - name: discountratestorage
+    title: DiscountRateStorage
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: STORAGE
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - STORAGE
+      missingValues:
+        - ''
+  - name: emission
+    title: EMISSION
+    schema:
+      fields:
+        - name: VALUE
+          type: str
+      missingValues:
+        - ''
+  - name: emissionactivityratio
+    title: EmissionActivityRatio
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: EMISSION
+          type: str
+        - name: MODE_OF_OPERATION
+          type: int
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: EMISSION
+          reference:
+            resource: emission
+            fields: VALUE
+        - fields: MODE_OF_OPERATION
+          reference:
+            resource: mode_of_operation
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - EMISSION
+        - MODE_OF_OPERATION
+        - YEAR
+      missingValues:
+        - ''
+  - name: emissionspenalty
+    title: EmissionsPenalty
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: EMISSION
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: EMISSION
+          reference:
+            resource: emission
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - EMISSION
+        - YEAR
+      missingValues:
+        - ''
+  - name: fuel
+    title: FUEL
+    schema:
+      fields:
+        - name: VALUE
+          type: str
+      missingValues:
+        - ''
+  - name: fixedcost
+    title: FixedCost
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: inputactivityratio
+    title: InputActivityRatio
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: FUEL
+          type: str
+        - name: MODE_OF_OPERATION
+          type: int
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: FUEL
+          reference:
+            resource: fuel
+            fields: VALUE
+        - fields: MODE_OF_OPERATION
+          reference:
+            resource: mode_of_operation
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - FUEL
+        - MODE_OF_OPERATION
+        - YEAR
+      missingValues:
+        - ''
+  - name: mode_of_operation
+    title: MODE_OF_OPERATION
+    schema:
+      fields:
+        - name: VALUE
+          type: int
+      missingValues:
+        - ''
+  - name: minstoragecharge
+    title: MinStorageCharge
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: STORAGE
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - STORAGE
+        - YEAR
+      missingValues:
+        - ''
+  - name: modelperiodemissionlimit
+    title: ModelPeriodEmissionLimit
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: EMISSION
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: EMISSION
+          reference:
+            resource: emission
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - EMISSION
+      missingValues:
+        - ''
+  - name: modelperiodexogenousemission
+    title: ModelPeriodExogenousEmission
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: EMISSION
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: EMISSION
+          reference:
+            resource: emission
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - EMISSION
+      missingValues:
+        - ''
+  - name: operationallife
+    title: OperationalLife
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+      missingValues:
+        - ''
+  - name: operationallifestorage
+    title: OperationalLifeStorage
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: STORAGE
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - STORAGE
+      missingValues:
+        - ''
+  - name: outputactivityratio
+    title: OutputActivityRatio
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: FUEL
+          type: str
+        - name: MODE_OF_OPERATION
+          type: int
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: FUEL
+          reference:
+            resource: fuel
+            fields: VALUE
+        - fields: MODE_OF_OPERATION
+          reference:
+            resource: mode_of_operation
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - FUEL
+        - MODE_OF_OPERATION
+        - YEAR
+      missingValues:
+        - ''
+  - name: region
+    title: REGION
+    schema:
+      fields:
+        - name: VALUE
+          type: str
+      missingValues:
+        - ''
+  - name: reminproductiontarget
+    title: REMinProductionTarget
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - YEAR
+      missingValues:
+        - ''
+  - name: retagfuel
+    title: RETagFuel
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: FUEL
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: FUEL
+          reference:
+            resource: fuel
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - FUEL
+        - YEAR
+      missingValues:
+        - ''
+  - name: retagtechnology
+    title: RETagTechnology
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: reservemargin
+    title: ReserveMargin
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - YEAR
+      missingValues:
+        - ''
+  - name: reservemargintagfuel
+    title: ReserveMarginTagFuel
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: FUEL
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: FUEL
+          reference:
+            resource: fuel
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - FUEL
+        - YEAR
+      missingValues:
+        - ''
+  - name: reservemargintagtechnology
+    title: ReserveMarginTagTechnology
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: residualcapacity
+    title: ResidualCapacity
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: residualstoragecapacity
+    title: ResidualStorageCapacity
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: STORAGE
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - STORAGE
+        - YEAR
+      missingValues:
+        - ''
+  - name: season
+    title: SEASON
+    schema:
+      fields:
+        - name: VALUE
+          type: int
+      missingValues:
+        - ''
+  - name: storage
+    title: STORAGE
+    schema:
+      fields:
+        - name: VALUE
+          type: str
+      missingValues:
+        - ''
+  - name: specifiedannualdemand
+    title: SpecifiedAnnualDemand
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: FUEL
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: FUEL
+          reference:
+            resource: fuel
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - FUEL
+        - YEAR
+      missingValues:
+        - ''
+  - name: specifieddemandprofile
+    title: SpecifiedDemandProfile
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: FUEL
+          type: str
+        - name: TIMESLICE
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: FUEL
+          reference:
+            resource: fuel
+            fields: VALUE
+        - fields: TIMESLICE
+          reference:
+            resource: timeslice
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - FUEL
+        - TIMESLICE
+        - YEAR
+      missingValues:
+        - ''
+  - name: storagelevelstart
+    title: StorageLevelStart
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: STORAGE
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - STORAGE
+      missingValues:
+        - ''
+  - name: storagemaxchargerate
+    title: StorageMaxChargeRate
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: STORAGE
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - STORAGE
+      missingValues:
+        - ''
+  - name: storagemaxdischargerate
+    title: StorageMaxDischargeRate
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: STORAGE
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - STORAGE
+      missingValues:
+        - ''
+  - name: technology
+    title: TECHNOLOGY
+    schema:
+      fields:
+        - name: VALUE
+          type: str
+      missingValues:
+        - ''
+  - name: timeslice
+    title: TIMESLICE
+    schema:
+      fields:
+        - name: VALUE
+          type: str
+      missingValues:
+        - ''
+  - name: technologyfromstorage
+    title: TechnologyFromStorage
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: STORAGE
+          type: str
+        - name: MODE_OF_OPERATION
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+        - fields: MODE_OF_OPERATION
+          reference:
+            resource: mode_of_operation
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - STORAGE
+        - MODE_OF_OPERATION
+      missingValues:
+        - ''
+  - name: technologytostorage
+    title: TechnologyToStorage
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: STORAGE
+          type: str
+        - name: MODE_OF_OPERATION
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: STORAGE
+          reference:
+            resource: storage
+            fields: VALUE
+        - fields: MODE_OF_OPERATION
+          reference:
+            resource: mode_of_operation
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - STORAGE
+        - MODE_OF_OPERATION
+      missingValues:
+        - ''
+  - name: totalannualmaxcapacity
+    title: TotalAnnualMaxCapacity
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: totalannualmaxcapacityinvestment
+    title: TotalAnnualMaxCapacityInvestment
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: totalannualmincapacity
+    title: TotalAnnualMinCapacity
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: totalannualmincapacityinvestment
+    title: TotalAnnualMinCapacityInvestment
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: totaltechnologyannualactivitylowerlimit
+    title: TotalTechnologyAnnualActivityLowerLimit
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: totaltechnologyannualactivityupperlimit
+    title: TotalTechnologyAnnualActivityUpperLimit
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - YEAR
+      missingValues:
+        - ''
+  - name: totaltechnologymodelperiodactivitylowerlimit
+    title: TotalTechnologyModelPeriodActivityLowerLimit
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+      missingValues:
+        - ''
+  - name: totaltechnologymodelperiodactivityupperlimit
+    title: TotalTechnologyModelPeriodActivityUpperLimit
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+      missingValues:
+        - ''
+  - name: traderoute
+    title: TradeRoute
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: FUEL
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: FUEL
+          reference:
+            resource: fuel
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - FUEL
+        - YEAR
+      missingValues:
+        - ''
+  - name: variablecost
+    title: VariableCost
+    schema:
+      fields:
+        - name: REGION
+          type: str
+        - name: TECHNOLOGY
+          type: str
+        - name: MODE_OF_OPERATION
+          type: int
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: REGION
+          reference:
+            resource: region
+            fields: VALUE
+        - fields: TECHNOLOGY
+          reference:
+            resource: technology
+            fields: VALUE
+        - fields: MODE_OF_OPERATION
+          reference:
+            resource: mode_of_operation
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - REGION
+        - TECHNOLOGY
+        - MODE_OF_OPERATION
+        - YEAR
+      missingValues:
+        - ''
+  - name: year
+    title: YEAR
+    schema:
+      fields:
+        - name: VALUE
+          type: int
+      missingValues:
+        - ''
+  - name: yearsplit
+    title: YearSplit
+    schema:
+      fields:
+        - name: TIMESLICE
+          type: str
+        - name: YEAR
+          type: int
+        - name: VALUE
+          type: float
+      foreignKeys:
+        - fields: TIMESLICE
+          reference:
+            resource: timeslice
+            fields: VALUE
+        - fields: YEAR
+          reference:
+            resource: year
+            fields: VALUE
+      primaryKey:
+        - TIMESLICE
+        - YEAR
+      missingValues:
+        - ''

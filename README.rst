@@ -46,6 +46,14 @@ For example::
 License
 ~~~~~~~
 
+This material draws upon, adapts and extends Lab 2 from MJ2380, authored by Roberto Heredia Fonseca,
+Shravan Kumar and Francesco Gardumi and the OpTIMUS.community
+and is licensed under the Creative Commons Attribution 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+
+It also builds on material from MJ2383 authored by Will Usher, Camillo Ramirez and Agnese Beltramo
+licensed under the Creative Commons Attribution 4.0 International License.
+
 .. raw:: html
 
     <a rel="license"
